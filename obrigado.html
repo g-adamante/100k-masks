@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Desafio Máscaras do Bem em Combate ao COVID-19</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<link href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+
+
+		<!-- Banner -->
+		<section id="banner">
+			<div class="inner">
+				<div class="logo"><img style="max-width:100px;border-radius: 50px;" src="vector/isolated-layout.svg"
+						class="image"></div>
+				<h2>Agradecemos a participação!!</h2>
+				<p class="content"><b>Tenha certeza de que poderá salvar a vida de alguém com a sua obra de arte :)</b><br>
+				Em breve, entraremos em contato com mais informações.
+				</a></p>
+			</div>
+		</section>
+	
+	</div>
+	<style>
+		.wrapper.alt.inverted::before {
+			transform: scaleX(1);
+		}
+
+		.grid {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.grid-item {
+			flex-grow: 1;
+			min-width: 33%;
+		}
+
+		#ranking {
+			text-align: center;
+		}
+
+		@media only screen and (max-width: 600px) {
+			#ranking {
+				width: 100%;
+				text-align: center;
+			}
+
+		}
+
+		.hidden {
+			display: none;
+		}
+	</style>
+	<style>
+		.embed-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			max-width: 100%;
+		}
+
+		.embed-container iframe,
+		.embed-container object,
+		.embed-container embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-csv@1.0.11/src/jquery.csv.min.js"></script>
+
+	<script>
+		var ranking;
+
+		$(document).ready(function () {
+			$.ajax({
+				type: "GET",
+				url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_coijQ-3VpmcUxfHZ009YpzmqLsZsrkNIvMSDv-qOkxA9a_1-oQpa_ufCvhbt6OEyweTPZLI9g6qc/pub?gid=0&single=true&output=csv",
+				dataType: "text",
+				success: function (data) {
+
+					ranking = $.csv.toObjects(data);
+
+					$.each(ranking, function (i, v) {
+						if (ranking[i]['nome']) {
+							rank = $('#' + ranking[i]['ranking']);
+							rank.removeClass('hidden');
+
+							rank.find('.name').text(ranking[i]['nome'])
+							rank.find('.masks').text(ranking[i]['mascaras'])
+							rank.find('a').attr("href", ranking[i]['instagram'])
+							rank.find('.image').attr("src", ranking[i]['foto'])
+
+
+						}
+					})
+
+
+				}
+			});
+		});
+
+
+
+	</script>
+
+</body>
+
+</html>
