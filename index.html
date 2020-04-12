@@ -133,7 +133,7 @@
 				</div>
 			</section>
 			<!-- Two -->
-			<section id="two" class="wrapper alt spotlight style2">
+			<section id="ranking-section" class="hidden wrapper alt spotlight style2">
 
 				<h2 class="major" style="text-align:center;">RANKING DE DOADORES</h2>
 				<div class="inner grid">
@@ -399,6 +399,7 @@
 
 					$.each(ranking, function (i, v) {
 						if (ranking[i]['nome']) {
+							$('#ranking-section').removeClass("hidden")
 							rank = $('#' + ranking[i]['ranking']);
 							rank.removeClass('hidden');
 
