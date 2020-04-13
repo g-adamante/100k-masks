@@ -122,12 +122,7 @@
 					<div class="content" style="text-align:center;">
 						<h2 class="major">Quem apoia esse projeto:</h2>
 						<div>
-							<img src="#" width="100" height="100" style="margin:5px;">
-							<img src="#" width="100" height="100" style="margin:5px;">
-							<img src="#" width="100" height="100" style="margin:5px;">
-							<img src="#" width="100" height="100" style="margin:5px;">
-							<img src="#" width="100" height="100" style="margin:5px;">
-							<img src="#" width="100" height="100" style="margin:5px;">
+							<img src="parceiros.png" style="max-width:100%;margin:5px; background-color: #f0f8ff6b;">
 						</div>
 					</div>
 				</div>
@@ -210,7 +205,7 @@
 			</section>
 
 			<!-- Four -->
-			<section id="four" class="wrapper alt inverted style1">
+			<section id="howto" class="wrapper alt inverted style1">
 				<div class="inner">
 					<h2 class="major">Como fazer máscaras:</h2>
 					<p>Você pode fazer máscaras com diversos materiais e métodos - portanto, veja esses guias, e o que
@@ -218,24 +213,33 @@
 					<section class="features">
 						<article>
 							<a href="#" class="image">
-								<div class='embed-container'><iframe src='https://www.youtube.com/embed/aNjpH5lBZ8w'
+								<div class='embed-container'><iframe src='https://www.youtube.com/embed/Tyh3KZQkn6Y'
 										frameborder='0' allowfullscreen></iframe></div>
 							</a>
 
-							<h3 class="major">Com papel toalha</h3>
+							<h3 class="major">Como Abrandar Significativamente o Coronavírus? #Masks4All</h3>
 							<a href="#footer" class="special">Cadastre-se como colaborador</a>
-						</article>
+						</article>	
 						<article>
 							<a href="#" class="image">
-								<div class='embed-container'><iframe src='https://www.youtube.com/embed/5cAmdlgYI_E'
+								<div class='embed-container'><iframe src='https://www.youtube.com/embed/KxFi8TBTHU4'
 										frameborder='0' allowfullscreen></iframe></div>
 							</a>
-							<h3 class="major">Com uma camiseta</h3>
+
+							<h3 class="major">O Uso de máscaras faciais em Hong Kong</h3>
 							<a href="#footer" class="special">Cadastre-se como colaborador</a>
 						</article>
 						<article>
 							<a href="#" class="image">
-								<div class='embed-container'><iframe src='https://www.youtube.com/embed/dH0ECwJN-As'
+								<div class='embed-container'><iframe src='https://www.youtube.com/embed/OE9jNadXhcg'
+										frameborder='0' allowfullscreen></iframe></div>
+							</a>
+							<h3 class="major">Com tecido (sem máquina de costura)</h3>
+							<a href="#footer" class="special">Cadastre-se como colaborador</a>
+						</article>
+						<article>
+							<a href="#" class="image">
+								<div class='embed-container'><iframe src='https://www.youtube.com/embed/lIibWjOdsD4'
 										frameborder='0' allowfullscreen></iframe></div>
 							</a>
 							<h3 class="major">Com tecido</h3>
@@ -243,18 +247,57 @@
 						</article>
 						<article>
 							<a href="#" class="image">
-								<div class='embed-container'><iframe src='https://www.youtube.com/embed/o8OyV15ua24'
+								<div class='embed-container'><iframe src='https://www.youtube.com/embed/LQZUKuPCxJ8'
 										frameborder='0' allowfullscreen></iframe></div>
 							</a>
-							<h3 class="major">Com tecido e uma máquina de costura</h3>
+							<h3 class="major">Com tecido (Com máquina de costura)</h3>
 							<a href="#footer" class="special">Cadastre-se como colaborador</a>
 						</article>
 					</section>
 
 				</div>
 			</section>
+			
 
-		</section>
+			<!-- Two -->
+			<section id="news" class="wrapper alt inverted spotlight style2">
+				<div class="inner">
+				
+					<div class="content">
+						<h2 class="major" style="text-align: center;">Notícias importantes</h2>
+					
+						<div class="inner grid">
+							<div class=" grid-item">
+								<div class="content grid-item" id="ranking">
+									<img src="BRASAO-CMC.jpg" class=""
+										style="max-width:150px;width: 100%;margin: auto;" />
+		
+									<h3>Prefeitura de Curitiba</span> </h3>
+									<p><a target="_blank" href="https://www.curitiba.pr.gov.br/noticias/saude-orienta-uso-de-mascaras-caseiras-como-reforco-a-prevencao-da-covid-19-veja-as-orientacoes/55554">Secretaria de Saúde orienta uso de máscaras caseiras como reforço à prevenção da covid-19. <br>
+										Veja as orientações</a></p>
+		
+								</div>
+							</div>
+							<div class=" grid-item">
+								<div class="content grid-item" id="ranking">
+									<img src="g1.png" class="image"
+										style="max-width:150px;width: 100%;margin: auto;" />
+		
+									<h3><span class="name">G1</span> </h3>
+									<p><a href="https://g1.globo.com/bemestar/coronavirus/noticia/2020/04/02/ministerio-da-saude-divulga-manual-para-fazer-mascara-caseira.ghtml" target="_blank">
+									Ministério da Saúde divulga manual para fazer máscara caseira
+									</a></p>
+		
+								</div>
+							</div>
+							
+						</div>
+
+
+					</div>
+				</div>
+			</section>
+
 
 
 		<!-- Three -->
@@ -400,6 +443,7 @@
 					$.each(ranking, function (i, v) {
 						if (ranking[i]['nome']) {
 							$('#ranking-section').removeClass("hidden")
+							$('#news').removeClass("inverted")
 							rank = $('#' + ranking[i]['ranking']);
 							rank.removeClass('hidden');
 
@@ -409,6 +453,8 @@
 							rank.find('.image').attr("src", ranking[i]['foto'])
 
 
+						}else{
+							$('#howto').removeClass("inverted")
 						}
 					})
 
