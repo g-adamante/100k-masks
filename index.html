@@ -645,11 +645,11 @@
 		});
 		
 		//https://docs.google.com/spreadsheets/d/e/2PACX-1vR_coijQ-3VpmcUxfHZ009YpzmqLsZsrkNIvMSDv-qOkxA9a_1-oQpa_ufCvhbt6OEyweTPZLI9g6qc/pub?gid=1854849533&single=true&output=csv
-
+		//https://docs.google.com/spreadsheets/d/e/2PACX-1vR_coijQ-3VpmcUxfHZ009YpzmqLsZsrkNIvMSDv-qOkxA9a_1-oQpa_ufCvhbt6OEyweTPZLI9g6qc/pub?gid=0&single=true&output=csv
 		$(document).ready(function () {
 			$.ajax({
 				type: "GET",
-				url: "/ranking.csv",
+				url: "https://docs.google.com/spreadsheets/d/e/2PACX-1vR_coijQ-3VpmcUxfHZ009YpzmqLsZsrkNIvMSDv-qOkxA9a_1-oQpa_ufCvhbt6OEyweTPZLI9g6qc/pub?gid=0&single=true&output=csv",
 				dataType: "text",
 				success: function (data) {
 
